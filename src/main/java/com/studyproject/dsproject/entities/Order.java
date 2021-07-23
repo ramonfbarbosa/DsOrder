@@ -18,22 +18,22 @@ import com.studyproject.dsproject.enums.OrderStatus;
 
 @Entity
 @Table(name = "tb_order")
-public class Order implements Serializable{
+public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
 	private Instant moment;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private User client;
-	
+
 	private Integer orderStatus;
-	
+
 	public Order() {
 	}
 
@@ -66,7 +66,7 @@ public class Order implements Serializable{
 
 	public void setOrderStatus(OrderStatus orderStatus) {
 		if (orderStatus != null) {
-		this.orderStatus = orderStatus.getCode();
+			this.orderStatus = orderStatus.getCode();
 		}
 	}
 
