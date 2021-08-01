@@ -49,6 +49,4 @@ public class OrderItemPK implements Serializable{
 		OrderItemPK other = (OrderItemPK) obj;
 		return Objects.equals(order, other.order) && Objects.equals(product, other.product);
 	}
-	
-	
 }
